@@ -14,6 +14,9 @@ public class TimeConversion {
     }
 
     public static int hrMinToMin(int origHours, int origMinutes) {
+        if (origHours < 0)
+            throw new IllegalArgumentException("Invalid hours specified: " + origHours);
+
         int totMinutes;
         totMinutes = (origHours * 60) + origMinutes;
         return origMinutes;
